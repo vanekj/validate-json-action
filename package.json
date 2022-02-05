@@ -1,0 +1,51 @@
+{
+	"name": "validate-json-action",
+	"version": "1.0.0",
+	"description": "Validate JSON(s) by given schema using Ajv schema validator",
+	"license": "MIT",
+	"author": {
+		"name": "Jakub Vaněk",
+		"email": "info@jakub-vanek.eu"
+	},
+	"keywords": [
+		"json",
+		"schema",
+		"validator",
+		"ajv",
+		"action",
+		"workflow"
+	],
+	"type": "module",
+	"main": "src/action.js",
+	"scripts": {
+		"format": "prettier --write .",
+		"lint": "eslint \"**/*.js\"",
+		"build": "ncc build src/action.js -o .dist",
+		"start": "node src/action.js"
+	},
+	"dependencies": {
+		"@actions/core": "^1.6.0",
+		"@actions/glob": "^0.2.0",
+		"ajv": "^8.9.0",
+		"ansi-styles": "^6.1.0"
+	},
+	"devDependencies": {
+		"@vercel/ncc": "^0.33.1",
+		"eslint": "^8.8.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-node": "^11.1.0",
+		"prettier": "^2.5.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vanekj/validate-json-action"
+	},
+	"bugs": {
+		"email": "info@jakub-vanek.eu",
+		"url": "https://github.com/vanekj/validate-json-action/issues"
+	},
+	"volta": {
+		"node": "16.13.2",
+		"npm": "8.4.1"
+	}
+}

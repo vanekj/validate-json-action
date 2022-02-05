@@ -1,0 +1,5 @@
+# Built resources
+.dist
+
+# Dependency directories
+node_modules
