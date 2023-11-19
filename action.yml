@@ -3,11 +3,31 @@ description: 'Validate JSON(s) by given schema using Ajv schema validator'
 author: 'vanekj'
 inputs:
   schema:
-    description: 'Relative path to the JSON schema file (eg. schemas/default.schema.json)'
+    description: 'Relative path to the JSON schema file'
     required: true
+  additional_schema:
+    description: 'Relative path to additional JSON schema files references by `schema`. This can either be a single file or directory full of schemas (eg. schemas/ or schemas.schema.json)'
+    required: false
+    default: ""
+  additional_schema_extention:
+    description: 'The file extention of the additional schema used (This is required if you are using additional_schema to look for multiple schemas which are not schema.json) ( default: .schema.json ))'
+    required: false
+    default: ".schema.json"
   pattern:
     description: 'Glob pattern to the JSON(s) to validate (eg. data/**/*.json)'
     required: true
+  use_ajv_formats:
+    description: 'Whether or not to use the AJV formats - "true" or "false"'
+    required: false
+    default: "false"
+  allow_matching_properties:
+    description: 'Whether or not to allow properties that also match patternProperties in objects - "true" or "false"'
+    required: false
+    default: "false"
+  show_result_in_summary:
+    description: 'Whether or not to allow the results to show in summary - "true" or "false"'
+    required: false
+    default: "false"
 outputs:
   result:
     description: 'Relative paths to the invalid JSON(s)'
